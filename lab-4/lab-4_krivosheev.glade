@@ -191,7 +191,7 @@
             </child>
             <child>
               <object class="GtkButton" id="Dowlod">
-                <property name="label" translatable="yes">Doown file</property>
+                <property name="label" translatable="yes">Dowlond file</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>

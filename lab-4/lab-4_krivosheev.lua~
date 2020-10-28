@@ -36,11 +36,14 @@ ui.lst_items:append_column(c3)
 ui.lst_items:append_column(c4)
 
 function ui.Instal:on_clicked(...)
-	file = io.open("PoleInput","r+")
-	for y=0, 2, 1 do
-	io.write(ui.mdl_items[y][1])
+if (ui.mdl_items:append()>0)
+then
+	file = io.open("lab-04.txt","r+")
+	for y=0, 1, 1 do
+	io.write(ui.mdl_items[y])
 	end
 	io.close(file)
+end
 end
 
 ui.wnd.title = 'lab'

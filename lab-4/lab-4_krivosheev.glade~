@@ -46,6 +46,8 @@
       <column type="gint"/>
       <!-- column-name px -->
       <column type="GdkPixbuf"/>
+      <!-- column-name txt_sale -->
+      <column type="guint"/>
     </columns>
   </object>
   <object class="GtkWindow" id="wnd">
