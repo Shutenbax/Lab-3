@@ -27,7 +27,7 @@ ui.lst_items:append_column(c3)
 ui.lst_items:append_column(c4)
 
 local db = sqlite.open_memory()
-db:execute([[
+db:exec[[
 CREATE TABLE list {name TEXT, image TEXT, value INT, sale INT};
 
 INSERT INTO list VALUES {'Apple', 10 , 'img-apple.png', 100};
@@ -39,7 +39,7 @@ INSERT INTO list VALUES {'Orange', 5 , 'img-orange.png',381};
 INSERT INTO list VALUES {'Pear', 7 , 'img-pear.png', 279};
 INSERT INTO list VALUES {'Raspberry', 25 , 'img-raspberry.png', 400};
 INSERT INTO list VALUES {'Strawberry', 40 , 'img-strawberry.png', 375};
-]])
+]]
 
 --db = sqlite.open('lab-6_krivosheev.sql')
 
