@@ -4,7 +4,7 @@ lgi = require 'lgi'
 sqlite = require 'lsqlite3'
 
 gtk = lgi.Gtk
-pixbuf = lgi.GdkPixbuf
+pixbuf = lgi.GdkPixbuf.Pixbuf
 
 gtk.init()
 
@@ -26,28 +26,13 @@ ui.lst_items:append_column(c2)
 ui.lst_items:append_column(c3)
 ui.lst_items:append_column(c4)
 
-local db = sqlite.open_memory()
-db:execute([[
-CREATE TABLE list {name TEXT, image TEXT, value INT, sale INT};
-
-INSERT INTO list VALUES {'Apple', 10 , 'img-apple.png', 100};
-INSERT INTO list VALUES {'Blueberry', 100 , 'img-blueberry.png', 200};
-INSERT INTO list VALUES {'Cherry', 30 , 'img-cherry.png', 157};
-INSERT INTO list VALUES {'Grapes', 70 , 'img-grapes.png', 46};
-INSERT INTO list VALUES {'Lemon', 3 , 'img-lemon.png', 83};
-INSERT INTO list VALUES {'Orange', 5 , 'img-orange.png',381};
-INSERT INTO list VALUES {'Pear', 7 , 'img-pear.png', 279};
-INSERT INTO list VALUES {'Raspberry', 25 , 'img-raspberry.png', 400};
-INSERT INTO list VALUES {'Strawberry', 40 , 'img-strawberry.png', 375};
-]])
-
---db = sqlite.open('lab-6_krivosheev.sql')
+db = sqlite.open('lab-6_krivosheev.db')
 
 for row in db:rows('SELECT * FROM list') do
 	px = pixbuf.new_from_file(row.image)
 
 	el = ui.stor_items:append()
-	ui.stor_items[el] = { [1] = row.name, [2] = row.value, [3] = px, [4] = 			row.sale }
+	ui.stor_items[el] = { [1] = row.name, [2] = row.value, [3] = px, [4] = row.sale }
 end
 
 db:close()
