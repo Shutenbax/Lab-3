@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee (id INT, name TEXT);
+
+INSERT INTO employee VALUES (1, 'Alexey Krivosheev');
+INSERT INTO employee VALUES (2, 'Dezmund');
+INSERT INTO employee VALUES (3, 'Erdis');
+INSERT INTO employee VALUES (4, 'Torvald');
+INSERT INTO employee VALUES (5, 'Deimos');
