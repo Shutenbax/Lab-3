@@ -11,26 +11,26 @@ INSERT INTO employee VALUES (5, 'Deimos');
 DROP TABLE IF EXISTS mapping;
 CREATE TABLE mapping (idSlave INT, idLanguage INT);
 
-INSERT INTO language VALUES (1, 1);
-INSERT INTO language VALUES (1, 2);
-INSERT INTO language VALUES (1, 3);
-INSERT INTO language VALUES (1, 4);
+INSERT INTO mapping VALUES (1, 1);
+INSERT INTO mapping VALUES (1, 2);
+INSERT INTO mapping VALUES (1, 3);
+INSERT INTO mapping VALUES (1, 4);
 
-INSERT INTO language VALUES (2, 2);
-INSERT INTO language VALUES (2, 3);
+INSERT INTO mapping VALUES (2, 2);
+INSERT INTO mapping VALUES (2, 3);
 
-INSERT INTO language VALUES (3, 1);
-INSERT INTO language VALUES (3, 4);
-INSERT INTO language VALUES (3, 5);
+INSERT INTO mapping VALUES (3, 1);
+INSERT INTO mapping VALUES (3, 4);
+INSERT INTO mapping VALUES (3, 5);
 
-INSERT INTO language VALUES (4, 5);
-INSERT INTO language VALUES (4, 6);
+INSERT INTO mapping VALUES (4, 5);
+INSERT INTO mapping VALUES (4, 6);
 
-INSERT INTO language VALUES (1, 1);
-INSERT INTO language VALUES (1, 2);
-INSERT INTO language VALUES (1, 3);
-INSERT INTO language VALUES (1, 4);
-INSERT INTO language VALUES (1, 5);
+INSERT INTO mapping VALUES (1, 1);
+INSERT INTO mapping VALUES (1, 2);
+INSERT INTO mapping VALUES (1, 3);
+INSERT INTO mapping VALUES (1, 4);
+INSERT INTO mapping VALUES (1, 5);
 
 
 DROP TABLE IF EXISTS language;

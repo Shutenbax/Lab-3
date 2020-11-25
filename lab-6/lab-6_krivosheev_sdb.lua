@@ -15,27 +15,34 @@ ui = bld.objects
 ui.wnd.title = 'lab-6_krivosheev_sdb'
 
 rdr_txt = gtk.CellRendererText {}
-rdr_pix = gtk.CellRendererPixbuf {}
 
-c1 = gtk.TreeViewColumn { title = 'Name', {rdr_txt, { text = 1 }}}
-c2 = gtk.TreeViewColumn { title = 'Volue', {rdr_txt, { text = 2 }}}
-c3 = gtk.TreeViewColumn { title = 'Image', {rdr_pix, { pixbuf = 3 }}}
-c4 = gtk.TreeViewColumn { title = 'Sale', {rdr_txt, { text = 4 }}}
+c1 = gtk.TreeViewColumn { title = 'name', {rdr_txt, { text = 1 }}}
+c2 = gtk.TreeViewColumn { title = 'nameLanguage', {rdr_txt, { text = 1 }}}
 
-ui.lst_items:append_column(c1)
-ui.lst_items:append_column(c2)
-ui.lst_items:append_column(c3)
-ui.lst_items:append_column(c4)
+ui.lst_Programmer:append_column(c1)
+ui.lst_Language:append_column(c2)
 
 
-db = sqlite.open('lab-6_krivosheev.db')
+db = sqlite.open('lab-6_krivosheev_sdb.db')
 
-for row in db:nrows('SELECT * FROM list') do
-	px = pixbuf.new_from_file(row.image)
-	print(row.name)
-	el = ui.stor_items:append()
-	ui.stor_items[el] = { [1] = row.name, [2] = row.volue, [3] = px, [4] = row.sale }
+for row in db:nrows('SELECT * FROM employee') do
+	el = ui.employ:append()
+	ui.employ[el] = { [1] = row.name}
 end
+
+for row in db:nrows('SELECT * FROM language') do
+	el = ui.langue:append()
+	ui.langue[el] = { [1] = row.nameLanguage}
+end
+
+function ui.TreeProg:on_changed(...)
+	if (ui.TreeProg)
+
+	i = ui.mdl_items:append()
+	ui.langue[i] = {[1] = name, [2] = value, [3] = px, [4]=sale}
+end
+
+
 
 db:close()
 
