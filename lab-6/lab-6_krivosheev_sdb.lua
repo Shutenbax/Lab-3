@@ -34,12 +34,12 @@ for row in db:nrows('SELECT * FROM language') do
 	el = ui.langue:append()
 	ui.langue[el] = { [1] = row.nameLanguage}
 end
-
-function ui.TreeProg:on_changed(...)
-	if (ui.TreeProg)
-
-	i = ui.mdl_items:append()
-	ui.langue[i] = {[1] = name, [2] = value, [3] = px, [4]=sale}
+ui.lst_Programmer.model="employ"
+function ui.ProgButton:on_clicked(...)
+	
+	
+	ui.tec[0] = { [1] = ui.ProgComboBox.Text}
+	ui.lst_Programmer.TreeViewModel=ui.tec
 end
 
 

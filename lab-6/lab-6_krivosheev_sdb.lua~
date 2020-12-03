@@ -34,7 +34,13 @@ for row in db:nrows('SELECT * FROM language') do
 	el = ui.langue:append()
 	ui.langue[el] = { [1] = row.nameLanguage}
 end
-
+ui.lst_Programmer.TreeViewModel=ui.employ
+function ui.ProgButton:on_clicked(...)
+	
+	
+	ui.tec[0] = { [1] = ui.ProgComboBox.Text}
+	ui.lst_Programmer.TreeViewModel=ui.tec
+end
 
 
 
